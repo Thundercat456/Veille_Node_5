@@ -1,10 +1,9 @@
 const express = require('express');
 const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient; // le pilote MongoDB
-<<<<<<< HEAD
+
 const ObjectID = require('mongodb').ObjectID;
-=======
->>>>>>> fcb51c15a956ba37bc8c9ee83049587e0cb7a2cb
+
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'));
@@ -24,7 +23,7 @@ app.get('/', function (req, res) {
  res.render('gabarit2.ejs', {adresse: resultat})
  }) 
 })
-<<<<<<< HEAD
+
 
 app.post('/ajouter', (req, res) => {
  db.collection('adresse').save(req.body, (err, result) => {
@@ -46,8 +45,7 @@ app.get('/detruire/:telephone', (req, res) => {
 
 }) 
 })
-=======
->>>>>>> fcb51c15a956ba37bc8c9ee83049587e0cb7a2cb
+
 
 let db // variable qui contiendra le lien sur la BD
 
