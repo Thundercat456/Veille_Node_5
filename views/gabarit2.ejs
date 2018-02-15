@@ -7,14 +7,46 @@
  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
- <table class="tableau">
- <% for(elm of adresses) {%>
- <tr>
- <td><%= elm.id %></td>
- <td><%= elm.nom %></td>
- <td><%= elm.telephone %></td>
- </tr>
- <% } %>
- </table>
+	<h1>test</h1>
+	<table class="tableau">
+	<% let noLigne = 0 %>
+	<% for(element of adresse) { %>
+ 		<% if (noLigne == 0) { %>
+			<tr>
+				<%noLigne++ %>
+			 	<% for (p in element) { %>
+					<th><%= p %></th>
+			 	<% } %>
+			 </tr>
+			 <% } %>
+		
+
+
+		 <tr>
+		 	<%for (p in element){%>
+				<td><%= element[p] %></td>
+		 	<% } %>
+		 </tr>
+		 <% } %>
+
+	</table>
+	
+	<form action="/ajouter" method="POST">
+	  <input type="text" placeholder="nom" name="nom">
+	  <input type="text" placeholder="telephone" name="telephone">
+	  <button type="submit">Submit</button>
+	</form>
+
+	<ul class="adresse">
+		 <% for(adr of adresse) {%>
+		 <li class="client">
+		 <span><%= adr.nom %></span>
+		 <span><%= adr.telephone %></span>
+		 <span> - <%= adr._id %></span>
+		 <a href=http://localhost:8081/detruire/<%= adr._id %> >Détruire </a> "
+		 </li>
+		 <% } %>
+	</ul>
+
 </body>
 </html>
