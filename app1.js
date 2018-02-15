@@ -40,7 +40,7 @@ app.get('/detruire/:telephone', (req, res) => {
  if (err) return res.send(500, err)
  var cursor = db.collection('adresse').find().toArray(function(err, resultat){
  if (err) return console.log(err)
- res.render('gabarit.ejs', {adresse: resultat})
+ res.render('gabarit2.ejs', {adresse: resultat})
  })
 
 }) 
